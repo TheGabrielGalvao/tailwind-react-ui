@@ -18,7 +18,7 @@ module.exports = {
   },
   viteFinal: (config, { configType }) => {
     if (configType === 'PRODUCTION') {
-      config.base = '/frontend/'
+      config.base = '/tailwind-react-ui/'
     }
 
     return config
