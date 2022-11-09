@@ -1,19 +1,15 @@
 import { IconProps } from "phosphor-react/src/lib";
 import { ReactNode } from "react";
-import { RouteComponentProps } from "react-router";
 
 export interface Page {
-    id: number | string
+    id: number
     name: string
-    label: string
-    icon?: React.ComponentType<IconProps> | ReactNode
-    path?: string
-    route?: string
-    component?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any> | undefined
-    order?: number
-    visible?: boolean
+    label?: string
+    element?: ReactNode
+    route: string
     exact?: boolean
-    position?: EPositionItemMenu
+    private?: boolean
+    routeContext?: string
 }
 
 export interface Module {
@@ -22,12 +18,12 @@ export interface Module {
     label?: string
     icon?: React.ComponentType<IconProps>
     route: string
-    component?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any> | undefined
+    element?: ReactNode
     pages?: Page[]
     exact?: boolean
     menuposition?: EPositionItemMenu
     order?: number
-    initialPage?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any> | undefined
+    initialPage?: ReactNode
     private: boolean
     initialRoute?: string
 }
