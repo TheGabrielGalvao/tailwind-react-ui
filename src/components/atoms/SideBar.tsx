@@ -1,4 +1,5 @@
 import {clsx} from 'clsx'
+import { ArrowArcRight, CaretRight, IconProps } from 'phosphor-react'
 import { HTMLAttributes, ReactNode, useState } from 'react'
 import { Text } from './Text'
 
@@ -9,17 +10,17 @@ export interface SidebarProps extends HTMLAttributes<HTMLElement> {
 }
 
 export interface NavbarSectionItemProps extends SidebarProps {
-    icon?: ReactNode
-    label?: string
+    icon?: React.ComponentType<IconProps> | ReactNode
+    label?: string | ReactNode
 }
 
 const SidebarRoot = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
     return (
         <aside className={clsx(
-            'h-screen fixed flex flex-col text-2xl py-6 px-1 bg-white shadow-gray-400 shadow-lg ease-in duration-500',
+            'h-screen p-5  pt-8 relative duration-300 flex flex-col text-2xl py-6 px-1 bg-white shadow-gray-400 shadow-lg ',
             {
-                'w-16': !open,
-                'w-52 items-start justify-start': open
+                'w-20': !open,
+                'w-56': open
             },
             className
         )}
@@ -31,7 +32,7 @@ const SidebarRoot = ({children, className, open, size = 'sm', ...props }: Sideba
 
 const SidebarNav = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
     return (
-        <nav className='flex flex-col w-full items-start justify-between h-full text-2xl p-1'>
+        <nav className='flex flex-col w-full items-start justify-between h-full p-1'>
             {children}
         </nav>
     )
@@ -39,7 +40,7 @@ const SidebarNav = ({children, className, open, size = 'sm', ...props }: Sidebar
 
 const SidebarNavSection = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
     return (
-        <ul className='flex flex-col gap-2 text-2xl w-full'>
+        <ul className='flex flex-col gap-2 w-full'>
             {children}
         </ul>
     )
@@ -49,7 +50,7 @@ const SidebarNavSectionItem = ({children, className, open, icon, label }: Navbar
     console.log(open)
     return (
         <li className={clsx(
-            'flex items-center text-lg w-full text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300 cursor-pointer p-3 rounded-lg',
+            'flex items-center w-full text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300 cursor-pointer p-3 rounded-lg',
             {
                 "justify-center": !open,
                 "justify-start gap-4": open,
@@ -57,8 +58,8 @@ const SidebarNavSectionItem = ({children, className, open, icon, label }: Navbar
             className
         )}>
             {icon}
-            <Text className={clsx(
-                'transition-all duration-300',
+            <Text asChild={false} className={clsx(
+                'origin-left duration-200',
                 {
                     'hidden': !open,
                     'block': open

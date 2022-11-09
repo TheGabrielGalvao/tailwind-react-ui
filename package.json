@@ -13,13 +13,17 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.1",
+    "@types/react-router-dom": "^5.3.3",
     "clsx": "^1.2.1",
+    "lodash": "^4.17.21",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
+    "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",

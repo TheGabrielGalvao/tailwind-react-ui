@@ -4,11 +4,8 @@ import { SideMenu, SideMenuProps } from '../../components/molecules/SideMenu'
 export default {
     title: 'Components/Molecules/SideMenu',
     component: SideMenu,
-    args: {
-         open: false,
-    },
+    args: {},
     argTypes: {
-        open: [true, false],
         control: {
             type: 'inline-radio'
         }
