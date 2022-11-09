@@ -8,7 +8,8 @@ export interface Page {
     element?: ReactNode
     icon?: React.ComponentType<IconProps> | ReactNode
     position?: EPositionItemMenu
-    route: string
+    route?: string
+    order?: number
     exact?: boolean
     private?: boolean
     routeContext?: string

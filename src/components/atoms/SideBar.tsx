@@ -46,7 +46,7 @@ const SidebarNavSection = ({children, className, open, size = 'sm', ...props }: 
     )
 }
 
-const SidebarNavSectionItem = ({children, className, open, icon, label }: NavbarSectionItemProps) => {
+const SidebarNavSectionItem = ({className, open, icon, label }: NavbarSectionItemProps) => {
     console.log(open)
     return (
         <li className={clsx(
@@ -57,14 +57,16 @@ const SidebarNavSectionItem = ({children, className, open, icon, label }: Navbar
             },
             className
         )}>
-            {icon}
-            <Text asChild={false} className={clsx(
-                'origin-left duration-200',
-                {
-                    'hidden': !open,
-                    'block': open
-                }
-            )}>{label}</Text>
+            <>
+                {icon}
+                <Text asChild={false} className={clsx(
+                    'origin-left duration-200',
+                    {
+                        'hidden': !open,
+                        'block': open
+                    }
+                )}>{label}</Text>
+            </>
         </li>
     )
 }
