@@ -6,6 +6,8 @@ export interface Page {
     name: string
     label?: string
     element?: ReactNode
+    icon?: React.ComponentType<IconProps> | ReactNode
+    position?: EPositionItemMenu
     route: string
     exact?: boolean
     private?: boolean
