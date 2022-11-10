@@ -27,7 +27,7 @@ export const SideMenu = () => {
       <Sidebar.Nav open={open}>
             <CaretRight 
               className={clsx(
-                'absolute cursor-pointer -right-3 top-9  bg-blue-100 text-white border-2 rounded-full',
+                'absolute cursor-pointer -right-3 top-9  bg-blue-500 text-white border-2 rounded-full',
                 {
                   'rotate-180': open
                 }
