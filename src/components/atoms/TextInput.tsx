@@ -44,5 +44,4 @@ export const TextInput = {
     Root: TextInputRoot,
     Input: TextInputInput,
     Icon: TextInputIcon
-
 }

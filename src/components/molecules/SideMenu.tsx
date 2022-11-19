@@ -1,8 +1,7 @@
 import clsx from "clsx"
-import { AddressBook, CaretRight, CurrencyDollarSimple, Envelope, FileSearch, Gear, HouseSimple, TiktokLogo } from "phosphor-react"
-import { ReactNode, useState } from "react"
+import { CaretRight, Envelope, TiktokLogo } from "phosphor-react"
+import { useState } from "react"
 import { EPositionItemMenu } from "../../interfaces/ui/navigation"
-import { simpleNavigation } from "../../util/constants/navigation"
 import { getMenuByPosition } from "../../util/helpers/ui"
 import { Logo } from "../atoms/Logo"
 import { Sidebar } from "../atoms/SideBar"
@@ -21,7 +20,6 @@ export const SideMenu = () => {
   const [open, setOpen] = useState(false)
   const middleNav = getMenuByPosition(EPositionItemMenu.MIDDLE)
   const bottomNav = getMenuByPosition(EPositionItemMenu.BOTTOM)
-  console.log(middleNav)
   return (
     <Sidebar.Root open={open}>
       <Sidebar.Nav open={open}>
@@ -59,12 +57,12 @@ export const SideMenu = () => {
             </Sidebar.NavSection>
 
             <Sidebar.NavSection open={open}>
-              <TextInput.Root>
+              {/* <TextInput.Root>
                 <TextInput.Icon>
                   <Envelope className="cursor-pointer" onClick={() => setOpen(!open)}/>
                 </TextInput.Icon>
-                {/* <TextInput.Input placeholder= "Pesquisar" /> */}
-              </TextInput.Root>
+                <TextInput.Input placeholder= "Pesquisar" />
+              </TextInput.Root> */}
                 {middleNav.map(
                     item => (
                       <Sidebar.NavSectionItem open={open} icon={item.icon} label={<Text>{item.label}</Text>} />
