@@ -1,4 +1,3 @@
-import { ITime } from './datetimeFormat';
 
 export const moneyFormat = (value: number) => {
   return new Intl.NumberFormat('pt-BR', {
