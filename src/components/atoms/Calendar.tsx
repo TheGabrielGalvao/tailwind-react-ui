@@ -37,7 +37,7 @@ export const Calendar = () => {
           </div>
         </div>
         <div className="grid grid-cols-7 mt-4 border border-blue-100 rounded-lg divide-x-2 divide-blue-100">
-          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Dom <span className="bg-blue-400 text-white rounded-lg px-2">01</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Dom <span className="bg-blue-400 text-white rounded-lg px-2">02</span></div>
           <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Seg <span className="bg-yellow-500 text-black rounded-lg px-2">02</span></div>
           <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Ter <span className="bg-blue-400 text-white rounded-lg px-2">03</span></div>
           <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Qua <span className="bg-blue-400 text-white rounded-lg px-2">04</span></div>
