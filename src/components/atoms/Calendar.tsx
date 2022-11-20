@@ -26,31 +26,31 @@ export const Calendar = () => {
         <div className="flex flex-col flex-grow">
           <div className="flex items-center mt-4">
               <div className="flex ml-6">
-                  <button>
+                  <button name='prev' title='prev'>
                       <CaretLeft size={20} weight="bold" />
                   </button>
-                  <button>
+                  <button name='next' title='next'>
                       <CaretRight size={20} weight="bold" />
                   </button>
               </div>
               <h2 className="ml-2 text-xl font-bold leading-none">Novembro, 2022</h2>
           </div>
         </div>
-        <div className="grid grid-cols-7 mt-4">
-          <div className="p-2 text-sm font-bold">Dom <span className="bg-blue-400 text-white rounded-lg p-1">01</span></div>
-          <div className="p-2 text-sm font-bold">Seg <span className="bg-yellow-500 text-white rounded-lg p-1">02</span></div>
-          <div className="p-2 text-sm font-bold">Ter <span className="bg-blue-400 text-white rounded-lg p-1">03</span></div>
-          <div className="p-2 text-sm font-bold">Qua <span className="bg-blue-400 text-white rounded-lg p-1">04</span></div>
-          <div className="p-2 text-sm font-bold">Qui <span className="bg-blue-400 text-white rounded-lg p-1">05</span></div>
-          <div className="p-2 text-sm font-bold">Sex <span className="bg-blue-400 text-white rounded-lg p-1">06</span></div>
-          <div className="p-2 text-sm font-bold">Sab <span className="bg-blue-400 text-white rounded-lg p-1">07</span></div>
+        <div className="grid grid-cols-7 mt-4 border border-blue-100 rounded-lg divide-x-2 divide-blue-100">
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Dom <span className="bg-blue-400 text-white rounded-lg px-2">01</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Seg <span className="bg-yellow-500 text-black rounded-lg px-2">02</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Ter <span className="bg-blue-400 text-white rounded-lg px-2">03</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Qua <span className="bg-blue-400 text-white rounded-lg px-2">04</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Qui <span className="bg-blue-400 text-white rounded-lg px-2">05</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Sex <span className="bg-blue-400 text-white rounded-lg px-2">06</span></div>
+          <div className="p-4 text-sm font-bold justify-center items-center flex gap-2 w-full">Sáb <span className="bg-blue-400 text-white rounded-lg px-2">07</span></div>
         </div>
         <div className="grid grid-cols-7 p-1 gap-1">
           {
             [...Array(7)].map(x=> (
               <div className="relative flex flex-col group gap-1">
                 {
-                  [...Array(16)].map(x => {
+                  [...Array(10)].map(x => {
                     const timeFormated = timeFormat(time)
                     
                     return (
