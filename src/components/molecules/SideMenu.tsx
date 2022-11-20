@@ -3,26 +3,18 @@ import { CaretRight, Envelope, TiktokLogo } from "phosphor-react"
 import { useState } from "react"
 import { EPositionItemMenu } from "../../interfaces/ui/navigation"
 import { getMenuByPosition } from "../../util/helpers/ui"
-import { Logo } from "../atoms/Logo"
-import { Sidebar } from "../atoms/SideBar"
-import { Text } from "../atoms/Text"
-import { TextInput } from "../atoms/TextInput"
+import { LogoElement, SidebarElement, TextElement } from "../atoms"
 
 export interface SideMenuProps {
 }
-
-// export interface NavbarSectionItemProps extends SidebarProps {
-//   icon?: ReactNode
-//   label?: string
-// }
 
 export const SideMenu = () => {
   const [open, setOpen] = useState(false)
   const middleNav = getMenuByPosition(EPositionItemMenu.MIDDLE)
   const bottomNav = getMenuByPosition(EPositionItemMenu.BOTTOM)
   return (
-    <Sidebar.Root open={open}>
-      <Sidebar.Nav open={open}>
+    <SidebarElement.Root open={open}>
+      <SidebarElement.Nav open={open}>
             <CaretRight 
               className={clsx(
                 'absolute cursor-pointer -right-3 top-9  bg-blue-500 text-white border-2 rounded-full',
@@ -33,30 +25,30 @@ export const SideMenu = () => {
               size={25}  
               onClick={() => setOpen(!open)}
             />
-            <Sidebar.NavSection open={open} className="flex gap-x-4 items-center">
-                <Sidebar.NavSectionItem 
+            <SidebarElement.NavSection open={open} className="flex gap-x-4 items-center">
+                <SidebarElement.NavSectionItem 
                   open={open} 
                   className=' hover:bg-transparent hover:text-gray-400' 
                   icon={
-                    <Logo className={clsx(
+                    <LogoElement className={clsx(
                       'cursor-pointer duration-500 text-white',
                       {
                         'rotate-[360deg]': open
                       }
                     )}>
                       <TiktokLogo />
-                    </Logo>
+                    </LogoElement>
                   } 
-                  label={<Text><h1 className={clsx(
+                  label={<TextElement><h1 className={clsx(
                     'text-black origin-left text-md duration-200',
                     {
                       'scale-0': !open
                     }
-                  )}>Sistema</h1></Text>} 
+                  )}>Sistema</h1></TextElement>} 
                 />
-            </Sidebar.NavSection>
+            </SidebarElement.NavSection>
 
-            <Sidebar.NavSection open={open}>
+            <SidebarElement.NavSection open={open}>
               {/* <TextInput.Root>
                 <TextInput.Icon>
                   <Envelope className="cursor-pointer" onClick={() => setOpen(!open)}/>
@@ -65,22 +57,22 @@ export const SideMenu = () => {
               </TextInput.Root> */}
                 {middleNav.map(
                     item => (
-                      <Sidebar.NavSectionItem open={open} icon={item.icon} label={<Text>{item.label}</Text>} />
+                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<Text>{item.label}</Text>} />
                     )
                   )
                 }
                 
-            </Sidebar.NavSection>
+            </SidebarElement.NavSection>
 
-            <Sidebar.NavSection open={open}>
+            <SidebarElement.NavSection open={open}>
                   {bottomNav.map(
                     item => (
-                      <Sidebar.NavSectionItem open={open} icon={item.icon} label={<Text>{item.label}</Text>} />
+                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<TextElement>{item.label}</TextElement>} />
                     )
                   )
                 }
-            </Sidebar.NavSection>
-        </Sidebar.Nav>
-    </Sidebar.Root>
+            </SidebarElement.NavSection>
+        </SidebarElement.Nav>
+    </SidebarElement.Root>
   )
 }

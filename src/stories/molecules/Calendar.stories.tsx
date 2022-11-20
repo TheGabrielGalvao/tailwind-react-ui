@@ -1,8 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Calendar } from '../../components/atoms/Calendar'
+import { Calendar } from '../../components/molecules'
 
 export default {
-    title: 'Components/Atoms/Calendar',
+    title: 'Components/Molecules/Calendar',
     component: Calendar,
     args: {
         

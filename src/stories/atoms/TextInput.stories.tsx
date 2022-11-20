@@ -1,16 +1,16 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { TextInput, TextInputInputProps, TextInputRootProps } from '../../components/atoms/TextInput'
 import { Envelope } from 'phosphor-react'
+import { TextInputElement, TextInputRootElementProps } from '../../components/atoms'
 
 export default {
-    title: 'Components/Atoms/TextInput',
-    component: TextInput.Root,
+    title: 'Components/Atoms/TextInputElement',
+    component: TextInputElement.Root,
     args: {
          children: [
-            <TextInput.Icon>
+            <TextInputElement.Icon>
                 <Envelope />
-            </TextInput.Icon>,
-            <TextInput.Input placeholder= "Seu email" />
+            </TextInputElement.Icon>,
+            <TextInputElement.Input placeholder= "Seu email" />
          ]
     },
     argTypes: {
@@ -21,13 +21,13 @@ export default {
         }
     }
 
-} as Meta<TextInputRootProps>
+} as Meta<TextInputRootElementProps>
 
-export const Default: StoryObj<TextInputInputProps> = {}
+export const Default: StoryObj<TextInputRootElementProps> = {}
 
-export const WithoutIcon: StoryObj<TextInputInputProps> = {
+export const WithoutIcon: StoryObj<TextInputRootElementProps> = {
     args: {
-        children: <TextInput.Input placeholder= "Seu email" />
+        children: <TextInputElement.Input placeholder= "Seu email" />
     }
 }    
 

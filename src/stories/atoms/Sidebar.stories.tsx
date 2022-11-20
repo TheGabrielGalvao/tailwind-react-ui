@@ -1,28 +1,28 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Sidebar, SidebarProps } from '../../components/atoms/SideBar'
 import {AddressBook, CurrencyDollarSimple, Gear, HouseSimple, TiktokLogo} from 'phosphor-react'
+import { SidebarElement, SidebarElementProps } from '../../components/atoms'
 
 export default {
-    title: 'Components/Atoms/Sidebar',
-    component: Sidebar.Root,
+    title: 'Components/Atoms/SidebarElement',
+    component: SidebarElement.Root,
     args: {
          open: false,
          children: [
-            <Sidebar.Nav>
-                <Sidebar.NavSection>
-                    <Sidebar.NavSectionItem className='text-white bg-blue-500 hover:bg- hover:text-blue-500 text-lg' icon={<TiktokLogo className='text-white' />} label="Sistema" />
-                </Sidebar.NavSection>
+            <SidebarElement.Nav>
+                <SidebarElement.NavSection>
+                    <SidebarElement.NavSectionItem className='text-white bg-blue-500 hover:bg- hover:text-blue-500 text-lg' icon={<TiktokLogo className='text-white' />} label="Sistema" />
+                </SidebarElement.NavSection>
 
-                <Sidebar.NavSection>
-                    <Sidebar.NavSectionItem icon={<HouseSimple />} label="Home" />
-                    <Sidebar.NavSectionItem icon={<AddressBook />} label="Contatos" />
-                    <Sidebar.NavSectionItem icon={<CurrencyDollarSimple />} label="Financeiro" />
-                </Sidebar.NavSection>
+                <SidebarElement.NavSection>
+                    <SidebarElement.NavSectionItem icon={<HouseSimple />} label="Home" />
+                    <SidebarElement.NavSectionItem icon={<AddressBook />} label="Contatos" />
+                    <SidebarElement.NavSectionItem icon={<CurrencyDollarSimple />} label="Financeiro" />
+                </SidebarElement.NavSection>
 
-                <Sidebar.NavSection>
-                    <Sidebar.NavSectionItem icon={<Gear />} label="Ajustes" />
-                </Sidebar.NavSection>
-            </Sidebar.Nav>,
+                <SidebarElement.NavSection>
+                    <SidebarElement.NavSectionItem icon={<Gear />} label="Ajustes" />
+                </SidebarElement.NavSection>
+            </SidebarElement.Nav>,
         ]
     },
     argTypes: {
@@ -32,7 +32,7 @@ export default {
         }
     }
 
-} as Meta<SidebarProps>
+} as Meta<SidebarElementProps>
 
-export const Default: StoryObj<SidebarProps> = {}
+export const Default: StoryObj<SidebarElementProps> = {}
 

@@ -3,7 +3,7 @@ import {Slot} from '@radix-ui/react-slot'
 import {clsx} from 'clsx'
 import { ButtonHTMLAttributes, ReactNode } from 'react'
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonElementProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: 'default' | 'primary' | 'success' | 'danger' | 'warning'
     children: ReactNode
     asChild?: boolean
@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 
 
-export const Button = ({children, asChild, className, variant, ...props }: ButtonProps) => {
+export const ButtonElement = ({children, asChild, className, variant, ...props }: ButtonElementProps) => {
     const Comp = asChild ? Slot: 'button'
     return (
         <Comp className={clsx(

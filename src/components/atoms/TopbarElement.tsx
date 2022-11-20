@@ -1,20 +1,19 @@
 import { HTMLAttributes, ReactNode, useState } from 'react'
 import clsx from "clsx"
 import { IconProps } from 'phosphor-react'
-import { Text } from './Text'
 
-export interface TopbarProps extends HTMLAttributes<HTMLElement> {
+export interface TopbarElementProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode | [],
   open?: boolean
   size?: 'sm' | 'lg'
 }
 
-export interface TopbarSectionItemProps extends TopbarProps {
+export interface TopbarSectionItemProps extends TopbarElementProps {
   icon?: React.ComponentType<IconProps> | ReactNode
   label?: string | ReactNode
 }
 
-export const TopbarRoot = ({children, className, open, size = 'sm', ...props }: TopbarProps) => {
+export const TopbarRoot = ({children, className, open, size = 'sm', ...props }: TopbarElementProps) => {
   return (
     <div className="
       relative
@@ -36,7 +35,7 @@ export const TopbarRoot = ({children, className, open, size = 'sm', ...props }: 
   )
 }
 
-const TopbarNav = ({children, className, open, size = 'sm', ...props }: TopbarProps) => {
+const TopbarNav = ({children, className, open, size = 'sm', ...props }: TopbarElementProps) => {
   return (
       <nav className='flex w-full items-center justify-between h-full'>
           {children}
@@ -44,7 +43,7 @@ const TopbarNav = ({children, className, open, size = 'sm', ...props }: TopbarPr
   )
 }
 
-const TopbarNavSection = ({children, className, open, size = 'sm', ...props }: TopbarProps) => {
+const TopbarNavSection = ({children, className, open, size = 'sm', ...props }: TopbarElementProps) => {
   return (
       <ul className='flex justify-end items-center gap-2 w-full'>
           {children}
@@ -76,7 +75,7 @@ TopbarRoot.displayName = 'Topbar.Root'
 TopbarNavSection.displayName = 'Topbar.NavSection'
 TopbarNavSectionItem.displayName = 'Topbar.NavSectionItem'
 
-export const Topbar = {
+export const TopbarElement = {
     Nav: TopbarNav,
     Root: TopbarRoot,
     NavSection: TopbarNavSection,

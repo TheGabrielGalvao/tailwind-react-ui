@@ -1,27 +1,26 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { FileSearch, User } from 'phosphor-react'
-import { TextInput } from '../../components/atoms/TextInput'
-import { Topbar, TopbarProps } from '../../components/atoms/TopBar'
+import { TextInputElement, TopbarElement, TopbarElementProps } from '../../components/atoms'
 
 export default {
-    title: 'Components/Atoms/Topbar',
-    component: Topbar.Root,
+    title: 'Components/Atoms/TopbarElement',
+    component: TopbarElement.Root,
     args: {
       children: [
-        <Topbar.Nav>
-            <Topbar.NavSection>
-              <TextInput.Root>
-                <TextInput.Icon>
+        <TopbarElement.Nav>
+            <TopbarElement.NavSection>
+              <TextInputElement.Root>
+                <TextInputElement.Icon>
                   <FileSearch className="cursor-text"/>
-                </TextInput.Icon>
-                <TextInput.Input placeholder= "Pesquisar" />
-              </TextInput.Root>  
-            </Topbar.NavSection>
+                </TextInputElement.Icon>
+                <TextInputElement.Input placeholder= "Pesquisar" />
+              </TextInputElement.Root>  
+            </TopbarElement.NavSection>
             
-            <Topbar.NavSection>
-                <Topbar.NavSectionItem icon={<User size={20} />}  />
-            </Topbar.NavSection>
-        </Topbar.Nav>,
+            <TopbarElement.NavSection>
+                <TopbarElement.NavSectionItem icon={<User size={20} />}  />
+            </TopbarElement.NavSection>
+        </TopbarElement.Nav>,
     ]
     },
     argTypes: {
@@ -30,7 +29,7 @@ export default {
         // }
     }
 
-} as Meta<TopbarProps>
+} as Meta<TopbarElementProps>
 
-export const Default: StoryObj<TopbarProps> = {}
+export const Default: StoryObj<TopbarElementProps> = {}
 

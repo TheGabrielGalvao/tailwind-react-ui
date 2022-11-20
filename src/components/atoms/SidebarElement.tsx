@@ -1,20 +1,19 @@
 import {clsx} from 'clsx'
 import { ArrowArcRight, CaretRight, IconProps } from 'phosphor-react'
 import { HTMLAttributes, ReactNode, useState } from 'react'
-import { Text } from './Text'
 
-export interface SidebarProps extends HTMLAttributes<HTMLElement> {
+export interface SidebarElementProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode | [],
     open?: boolean
     size?: 'sm' | 'lg'
 }
 
-export interface NavbarSectionItemProps extends SidebarProps {
+export interface NavbarSectionItemProps extends SidebarElementProps {
     icon?: React.ComponentType<IconProps> | ReactNode
     label?: string | ReactNode
 }
 
-const SidebarRoot = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
+const SidebarRoot = ({children, className, open, size = 'sm', ...props }: SidebarElementProps) => {
     return (
         <aside className={clsx(
             'h-screen p-5  pt-8 relative duration-300 flex flex-col text-2xl py-6 px-1 bg-white shadow-gray-400 shadow-lg ',
@@ -30,7 +29,7 @@ const SidebarRoot = ({children, className, open, size = 'sm', ...props }: Sideba
         </aside>
 )}
 
-const SidebarNav = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
+const SidebarNav = ({children, className, open, size = 'sm', ...props }: SidebarElementProps) => {
     return (
         <nav className='flex flex-col w-full items-start justify-between h-full p-1'>
             {children}
@@ -38,7 +37,7 @@ const SidebarNav = ({children, className, open, size = 'sm', ...props }: Sidebar
     )
 }
 
-const SidebarNavSection = ({children, className, open, size = 'sm', ...props }: SidebarProps) => {
+const SidebarNavSection = ({children, className, open, size = 'sm', ...props }: SidebarElementProps) => {
     return (
         <ul className='flex flex-col gap-2 w-full'>
             {children}
@@ -78,7 +77,7 @@ SidebarRoot.displayName = 'Sidebar.Root'
 SidebarNavSection.displayName = 'Sidebar.NavSection'
 SidebarNavSectionItem.displayName = 'Sidebar.NavSectionItem'
 
-export const Sidebar = {
+export const SidebarElement = {
     Nav: SidebarNav,
     Root: SidebarRoot,
     NavSection: SidebarNavSection,

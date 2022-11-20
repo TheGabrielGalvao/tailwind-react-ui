@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Text, TextProps } from '../../components/atoms/Text'
+import { TextElement, TextElementProps } from '../../components/atoms'
 
 export default {
-    title: 'Components/Atoms/Text',
-    component: Text,
+    title: 'Components/Atoms/TextElement',
+    component: TextElement,
     args: {
          children: 'Lorem Ipsum',
          size: 'md'
@@ -17,27 +17,27 @@ export default {
         }
     }
 
-} as Meta<TextProps>
+} as Meta<TextElementProps>
 
-export const Default: StoryObj<TextProps> = {}
+export const Default: StoryObj<TextElementProps> = {}
 
-export const Small: StoryObj<TextProps> = {
+export const Small: StoryObj<TextElementProps> = {
     args:{
         size: 'sm'
     }
 }
 
-export const Large: StoryObj<TextProps> = {
+export const Large: StoryObj<TextElementProps> = {
     args:{
         size: 'lg'
     }
 }
 
-export const CustomComponent: StoryObj<TextProps> = {
+export const CustomComponent: StoryObj<TextElementProps> = {
     args:{
         asChild: false,
         children: (
-            <p>Text with P tag</p>
+            <p>TextElement with P tag</p>
         )
     },
     argTypes: {
