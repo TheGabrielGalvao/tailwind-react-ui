@@ -1,6 +1,7 @@
 import {clsx} from 'clsx'
 import { ArrowArcRight, CaretRight, IconProps } from 'phosphor-react'
 import { HTMLAttributes, ReactNode, useState } from 'react'
+import { TextElement } from './TextElement'
 
 export interface SidebarElementProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode | [],
@@ -58,13 +59,13 @@ const SidebarNavSectionItem = ({className, open, icon, label }: NavbarSectionIte
         )}>
             <>
                 {icon}
-                <Text asChild={false} className={clsx(
+                <TextElement asChild={false} className={clsx(
                     'origin-left duration-200',
                     {
                         'hidden': !open,
                         'block': open
                     }
-                )}>{label}</Text>
+                )}>{label}</TextElement>
             </>
         </li>
     )
