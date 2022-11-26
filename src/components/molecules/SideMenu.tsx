@@ -5,8 +5,7 @@ import { EPositionItemMenu } from "../../interfaces/ui/navigation"
 import { getMenuByPosition } from "../../util/helpers/ui"
 import { LogoElement, SidebarElement, TextElement } from "../atoms"
 
-export interface SideMenuProps {
-}
+export interface SideMenuProps {}
 
 export const SideMenu = () => {
   const [open, setOpen] = useState(false)
@@ -57,7 +56,7 @@ export const SideMenu = () => {
               </TextInput.Root> */}
                 {middleNav.map(
                     item => (
-                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<Text>{item.label}</Text>} />
+                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<TextElement>{item.label}</TextElement>} />
                     )
                   )
                 }
