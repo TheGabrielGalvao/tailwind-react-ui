@@ -1,6 +1,7 @@
 import { HTMLAttributes, ReactNode, useState } from 'react'
 import clsx from "clsx"
 import { IconProps } from 'phosphor-react'
+import { TextElement } from './TextElement'
 
 export interface TopbarElementProps extends HTMLAttributes<HTMLElement> {
   children?: ReactNode | [],
@@ -64,7 +65,7 @@ const TopbarNavSectionItem = ({className, open, icon, label }: TopbarSectionItem
       )}>
           <>
               {icon}
-              <Text asChild={false} className={clsx()}>{label}</Text>
+              <TextElement asChild={false} className={clsx()}>{label}</TextElement>
           </>
       </li>
   )
