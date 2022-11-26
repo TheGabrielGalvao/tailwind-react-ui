@@ -1,4 +1,3 @@
-
 import {Slot} from '@radix-ui/react-slot'
 import {clsx} from 'clsx'
 import { ReactNode } from 'react'
@@ -10,7 +9,7 @@ export interface TextElementProps {
     className?: string
 }
 
-export const TextElement = ({size = 'md', children, asChild, className }: TextProps) => {
+export const TextElement = ({size = 'md', children, asChild, className }: TextElementProps) => {
     const Comp = asChild ? Slot: 'span'
     return (
         <Comp className={clsx(
