@@ -6,4 +6,5 @@ export * from './SidebarElement'
 export * from './TextElement'
 export * from './TextInputElement'
 export * from './TopbarElement'
+export * from './TypeableSelectBoxElement'
 

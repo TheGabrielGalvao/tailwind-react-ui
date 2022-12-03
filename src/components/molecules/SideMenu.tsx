@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { CaretRight, Envelope, TiktokLogo } from "phosphor-react"
+import { CaretRight, TiktokLogo } from "phosphor-react"
 import { useState } from "react"
 import { EPositionItemMenu } from "../../interfaces/ui/navigation"
 import { getMenuByPosition } from "../../util/helpers/ui"
