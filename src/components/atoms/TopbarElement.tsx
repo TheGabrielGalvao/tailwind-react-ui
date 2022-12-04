@@ -53,7 +53,6 @@ const TopbarNavSection = ({children, className, open, size = 'sm', ...props }: T
 }
 
 const TopbarNavSectionItem = ({className, open, icon, label }: TopbarSectionItemProps) => {
-  console.log(open)
   return (
       <li className={clsx(
           'flex items-center text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300 cursor-pointer p-3 rounded-lg',

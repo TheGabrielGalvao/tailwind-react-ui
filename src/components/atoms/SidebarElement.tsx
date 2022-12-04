@@ -47,7 +47,6 @@ const SidebarNavSection = ({children, className, open, size = 'sm', ...props }: 
 }
 
 const SidebarNavSectionItem = ({className, open, icon, label }: NavbarSectionItemProps) => {
-    console.log(open)
     return (
         <li className={clsx(
             'flex items-center w-full text-gray-500 hover:bg-blue-500 hover:text-white transition-all duration-300 cursor-pointer p-3 rounded-lg',
