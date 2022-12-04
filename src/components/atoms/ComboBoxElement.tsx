@@ -48,9 +48,10 @@ export interface ComboboxOptionProps extends OlHTMLAttributes<HTMLOListElement> 
   open?: boolean
   data?: KeyValuePair[]
   selected?: KeyValuePair
+  itemClick?: MouseEventHandler<HTMLLIElement>
 }
 
-export const ComboBoxOptions = ({data, open, selected}: ComboboxOptionProps) => {
+export const ComboBoxOptions = ({data, open, selected, itemClick, children}: ComboboxOptionProps) => {
   return(
     <ul 
      className={clsx(
@@ -61,31 +62,40 @@ export const ComboBoxOptions = ({data, open, selected}: ComboboxOptionProps) => 
       }
     )}>
       {
-        data?.map((item) => (
-          <li 
-            key={item.key}
-            className={clsx(
-              'p-2 hover:text-blue-400 hover:bg-blue-100 cursor-pointer',
-              {
-                'bg-blue-100 text-blue-400': item.key === selected?.key,
-                'text-gray-500': item.key !== selected?.key
-              }
-            )}
-          >
-            {item.value}
-          </li>
-        ))
+        children
       }
     </ul>
+  )
+}
+
+export interface ComboboxOptionItemProps extends OlHTMLAttributes<HTMLOListElement> {
+  selected?: KeyValuePair
+  itemClick?: MouseEventHandler<HTMLLIElement>
+  label?: string
+}
+
+export const ComboBoxOptionItem = ({label, selected, itemClick, className}: ComboboxOptionItemProps) => {
+  return (
+    <li 
+      onClick={itemClick}
+      className={clsx(
+          'p-2 hover:text-blue-400 hover:bg-blue-100 cursor-pointer',
+          className
+        )}
+      >
+        {label}
+      </li>
   )
 }
 
 ComboBoxRoot.displayName = 'ComboboxElement.Root'
 ComboBoxInput.displayName = 'ComboboxElement.Input'
 ComboBoxOptions.displayName = 'ComboboxElement.Options'
+ComboBoxOptionItem.displayName = 'ComboboxElement.OptionItem'
 
 export const ComboBoxElement = {
     Root: ComboBoxRoot,
     Input: ComboBoxInput,
-    Options: ComboBoxOptions
+    Options: ComboBoxOptions,
+    OptionItem: ComboBoxOptionItem
 }
