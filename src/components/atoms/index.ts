@@ -9,4 +9,5 @@ export * from './TopbarElement'
 export * from './ComboBoxElement'
 export * from './TextareaElement'
 export * from './RadioButtonElement'
+export * from './CheckboxElement'
 
