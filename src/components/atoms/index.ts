@@ -7,4 +7,5 @@ export * from './TextElement'
 export * from './TextInputElement'
 export * from './TopbarElement'
 export * from './ComboBoxElement'
+export * from './TextareaElement'
 
