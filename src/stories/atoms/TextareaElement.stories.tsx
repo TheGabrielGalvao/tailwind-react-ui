@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import { TextareaElelmet, TextareaElementProps } from '../../components/atoms'
 
 export default {
-    title: 'Components/Atoms/TextareaElelmet',
+    title: 'Components/Atoms/TextareaElement',
     component: TextareaElelmet,
     args: {
 
