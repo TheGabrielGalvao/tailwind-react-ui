@@ -1,11 +1,11 @@
 import { EventHandler, Fragment, KeyboardEvent, MouseEventHandler, OlHTMLAttributes, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 import { Check, CaretDown } from 'phosphor-react'
-import { BaseComponent } from '@fullcalendar/react'
 import { TextInputElement, TextInputIconProps, TextInputInputProps, TextInputRootElementProps } from './TextInputElement'
 import { ReactNode } from 'react'
 import clsx from 'clsx'
 import { KeyValuePair } from '../../util/interfaces'
+import { BaseComponentProps } from './types'
 
 // const data = [
 //   { id: 1, name: 'Wade Cooper' },
@@ -16,9 +16,8 @@ import { KeyValuePair } from '../../util/interfaces'
 //   { id: 6, name: 'Hellen Schmidt' },
 // ]
 
-export interface ComboBoxElementProps extends BaseComponent {
+export interface ComboBoxElementProps extends BaseComponentProps {
   placeholder?: string
-  children?: ReactNode
 }
 
 export const ComboBoxRoot = ({children}: ComboBoxElementProps) => {
