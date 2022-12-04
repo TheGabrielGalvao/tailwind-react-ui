@@ -1,9 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { TextareaElelmet, TextareaElementProps } from '../../components/atoms'
+import { TextareaElement, TextareaElementProps } from '../../components/atoms'
 
 export default {
     title: 'Components/Atoms/TextareaElement',
-    component: TextareaElelmet,
+    component: TextareaElement,
     args: {
 
         placeholder: "Escreva sua menssagem..."

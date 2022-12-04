@@ -7,7 +7,7 @@ import { ReactNode } from 'react'
 export interface TextareaElementProps extends TextareaHTMLAttributes<HTMLTextAreaElement> { }
 
 
-export const TextareaElelmet = ({ className, ...props }: TextareaElementProps) => {
+export const TextareaElement = ({ className, ...props }: TextareaElementProps) => {
     return (
         <textarea
             {...props}
