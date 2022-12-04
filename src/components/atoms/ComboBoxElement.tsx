@@ -33,10 +33,10 @@ export interface ComboboxInputProps extends TextInputInputProps{
   onIconClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export const ComboBoxInput = ({placeholder, onChange, onFocus, onIconClick, onKeyPressed, value}: ComboboxInputProps) => {
+export const ComboBoxInput = ({placeholder, onChange, onFocus, onIconClick, onKeyPressed, onBlur, value}: ComboboxInputProps) => {
   return(
     <TextInputElement.Root>
-      <TextInputElement.Input value={value} onKeyDown={onKeyPressed} placeholder={placeholder ?? "Selecione"} onChange={onChange} onFocus={onFocus}  />
+      <TextInputElement.Input value={value} onBlur={onBlur} onKeyDown={onKeyPressed} placeholder={placeholder ?? "Selecione"} onChange={onChange} onFocus={onFocus}  />
       <TextInputElement.Icon onClick={onIconClick}>
           <CaretDown className='cursor-pointer' />
       </TextInputElement.Icon>

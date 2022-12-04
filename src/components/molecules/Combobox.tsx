@@ -58,7 +58,7 @@ export const Combobox = ({placeholder, data}: ComboboxProps) => {
         
   return (
     <ComboBoxElement.Root>
-      <ComboBoxElement.Input value={selected?.value} onChange={handleChange} onKeyPressed={handleKeyPressed} placeholder={placeholder} onIconClick={() => setOpen(!open)} onFocus={() => setOpen(true)} />
+      <ComboBoxElement.Input value={selected?.value} onChange={handleChange} onKeyPressed={handleKeyPressed} placeholder={placeholder} onIconClick={() => setOpen(!open)} onFocus={() => setOpen(true)} onBlur={() => setOpen(false)} />
       <ComboBoxElement.Options selected={selected} data={query ? filteredData : data} open={open} />
     </ComboBoxElement.Root>
   )
