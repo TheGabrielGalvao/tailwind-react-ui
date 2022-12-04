@@ -38,12 +38,12 @@ export const Combobox = ({placeholder, data}: ComboboxProps) => {
             .includes(query.toLowerCase().replace(/\s+/g, ''))
         ) as KeyValuePair[]
       setFilteredData(filtered)  
-      setOpen(Boolean(filtered?.length > 0 ? true : false))
+      setOpen(Boolean(filtered?.length ? true : false))
   } 
 
   const handleKeyPressed = (event: KeyboardEvent<HTMLOListElement>) => {
       let index = selectedIndex ?? -1 
-      if(event.key === 'ArrowDown' && index < data?.length) {
+      if(event.key === 'ArrowDown' && data?.length && data.length > index) {
          index = index + 1 
       }
 
@@ -58,7 +58,7 @@ export const Combobox = ({placeholder, data}: ComboboxProps) => {
         
   return (
     <ComboBoxElement.Root>
-      <ComboBoxElement.Input value={selected?.value} onChange={handleChange} onKeyPressed={handleKeyPressed} placeholder={placeholder} onClick={() => setOpen(!open)} onFocus={() => setOpen(true)} />
+      <ComboBoxElement.Input value={selected?.value} onChange={handleChange} onKeyPressed={handleKeyPressed} placeholder={placeholder} onIconClick={() => setOpen(!open)} onFocus={() => setOpen(true)} />
       <ComboBoxElement.Options selected={selected} data={query ? filteredData : data} open={open} />
     </ComboBoxElement.Root>
   )

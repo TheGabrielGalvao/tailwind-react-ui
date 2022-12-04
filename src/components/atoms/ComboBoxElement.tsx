@@ -1,4 +1,4 @@
-import { EventHandler, Fragment, KeyboardEvent, OlHTMLAttributes, useState } from 'react'
+import { EventHandler, Fragment, KeyboardEvent, MouseEventHandler, OlHTMLAttributes, useState } from 'react'
 import { Combobox, Transition } from '@headlessui/react'
 import { Check, CaretDown } from 'phosphor-react'
 import { BaseComponent } from '@fullcalendar/react'
@@ -29,15 +29,16 @@ export const ComboBoxRoot = ({children}: ComboBoxElementProps) => {
   )
 }
 
-type Props = TextInputInputProps & TextInputIconProps & {
+export interface ComboboxInputProps extends TextInputInputProps{
   onKeyPressed?: EventHandler<KeyboardEvent> 
+  onIconClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export const ComboBoxInput = ({placeholder, onChange, onFocus, onClick, onKeyPressed, value}: Props) => {
+export const ComboBoxInput = ({placeholder, onChange, onFocus, onIconClick, onKeyPressed, value}: ComboboxInputProps) => {
   return(
     <TextInputElement.Root>
       <TextInputElement.Input value={value} onKeyDown={onKeyPressed} placeholder={placeholder ?? "Selecione"} onChange={onChange} onFocus={onFocus}  />
-      <TextInputElement.Icon onClick={onClick}>
+      <TextInputElement.Icon onClick={onIconClick}>
           <CaretDown className='cursor-pointer' />
       </TextInputElement.Icon>
     </TextInputElement.Root>
