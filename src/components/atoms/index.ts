@@ -8,4 +8,5 @@ export * from './TextInputElement'
 export * from './TopbarElement'
 export * from './ComboBoxElement'
 export * from './TextareaElement'
+export * from './RadioButtonElement'
 

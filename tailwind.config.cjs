@@ -6,23 +6,31 @@ module.exports = {
   theme: {
     fontSize: {
       xs: 14,
-      sm:16,
-      md:18,
-      lg:20,
-      xl:24,
-      '2xl':32
+      sm: 16,
+      md: 18,
+      lg: 20,
+      xl: 24,
+      '2xl': 32
     },
-    
+
     colors: {
       black: '#000',
       white: '#FFF',
       transparent: 'transparent',
-      
+      primary: {
+        500: "#4FD18B",
+        400: "#6BD198",
+        100: "#DCF5E8"
+      },
+      secondary: {
+        500: "#4C49ED",
+        400: "#625FF9",
+        100: "#E4E9F7"
+      },
       blue: {
         500: "#4C49ED",
         400: "#625FF9",
         100: "#E4E9F7"
-        
       },
 
       green: {
@@ -43,11 +51,11 @@ module.exports = {
         100: "#F5DCDC"
       },
 
-      gray: {
+      grey: {
         500: "#A1A0BD",
         400: "#CCCBD8",
       },
-      
+
       cyan: {
         500: "#81d8f7",
         300: "#9be1fb",
