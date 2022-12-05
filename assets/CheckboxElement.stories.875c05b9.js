@@ -1,0 +1,2 @@
+import{C as t,T as s}from"./CheckboxElement.33700f76.js";import{a as o,j as r}from"./jsx-runtime.eebbe781.js";import"./index.2cdc1275.js";import"./iframe.6127ea21.js";import"./index.d41f9c0d.js";const l={title:"Components/Atoms/CheckboxElement",component:t,args:{},argTypes:{},decorators:[e=>o("div",{className:"flex items-center gap-2 text-white",children:[e(),r(s,{size:"sm",children:"Lembrar por 30 dias"})]})]},p={},x=["Default"];export{p as Default,x as __namedExportsOrder,l as default};
+//# sourceMappingURL=CheckboxElement.stories.875c05b9.js.map

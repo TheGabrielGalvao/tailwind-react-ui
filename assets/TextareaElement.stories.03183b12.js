@@ -1,0 +1,2 @@
+import{a as e}from"./CheckboxElement.33700f76.js";import"./jsx-runtime.eebbe781.js";import"./index.2cdc1275.js";import"./iframe.6127ea21.js";import"./index.d41f9c0d.js";const s={title:"Components/Atoms/TextareaElement",component:e,args:{placeholder:"Escreva sua menssagem..."}},n={},p=["Default"];export{n as Default,p as __namedExportsOrder,s as default};
+//# sourceMappingURL=TextareaElement.stories.03183b12.js.map
