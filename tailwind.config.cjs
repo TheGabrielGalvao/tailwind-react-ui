@@ -3,7 +3,13 @@ module.exports = {
   content: [
     './src/**/*.tsx',
   ],
+  
   theme: {
+    extend:{
+      backgroundImage: theme => ({
+        'hero': "url('/assets/img/bg-blue.jpg')",
+      }),
+    },
     fontSize: {
       xs: 14,
       sm: 16,

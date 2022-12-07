@@ -22,7 +22,7 @@ export interface ComboBoxElementProps extends BaseComponentProps {
 
 export const ComboBoxRoot = ({children}: ComboBoxElementProps) => {
     return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col relative gap-1">
       {children}
     </div>
   )
@@ -55,7 +55,7 @@ export const ComboBoxOptions = ({data, open, selected, itemClick, children}: Com
   return(
     <ul 
      className={clsx(
-      'flex flex-col h-auto max-h-60 rounded-md bg-white overflow-y-scroll overflow-x-hidden list-none text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
+      'absolute mt-14 w-full flex flex-col h-auto max-h-60 rounded-md bg-white overflow-y-scroll overflow-x-hidden list-none text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none',
       {
         'hidden': !open,
         'block': open
@@ -79,7 +79,7 @@ export const ComboBoxOptionItem = ({label, selected, itemClick, className}: Comb
     <li 
       onClick={itemClick}
       className={clsx(
-          'p-2 hover:text-blue-400 hover:bg-blue-100 cursor-pointer',
+          'p-2 w-full hover:text-blue-400 hover:bg-blue-100 cursor-pointer',
           className
         )}
       >

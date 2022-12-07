@@ -10,8 +10,6 @@ export interface ComboboxProps {
   data?: KeyValuePair[]
 }
 
-
-
 export const Combobox = ({placeholder, data}: ComboboxProps) => {
   const [selected, setSelected] = useState<KeyValuePair>()
   const [selectedIndex, setSelectedIndex] = useState<number>()

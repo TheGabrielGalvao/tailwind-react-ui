@@ -12,11 +12,12 @@ export const CheckboxElement = ({ className, ...props }: CheckboxElementProps) =
     return (
 
         <Checkbox.Root
-            className='w-6 h-6 p-[2px] bg-primary-400 rounded'
+            className='w-6 h-6 p-[2px] bg-transparent border border-blue-100 rounded flex items-center justify-center' 
+            {...props}
         >
 
             <Checkbox.Indicator asChild>
-                <Check weight='bold' className='h-5 w-5 text-primary-100' />
+                <Check weight='bold' className='h-5 w-5 text-blue-400' />
             </Checkbox.Indicator>
         </Checkbox.Root>
 
