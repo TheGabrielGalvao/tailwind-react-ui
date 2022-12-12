@@ -10,4 +10,4 @@ export * from './ComboBoxElement'
 export * from './TextareaElement'
 export * from './RadioButtonElement'
 export * from './CheckboxElement'
-
+export * from './AvatarElement'
