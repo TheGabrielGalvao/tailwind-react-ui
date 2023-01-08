@@ -1,3 +1,5 @@
 export * from './Calendar'
 export * from './SideMenu'
 export * from './Combobox'
+export * from './Header'
+export * from './TextInput'

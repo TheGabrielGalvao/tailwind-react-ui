@@ -1,0 +1,27 @@
+.Root {
+  @apply flex flex-col w-full bg-white shadow-sm;
+}
+
+.List {
+  @apply flex border border-blue-400 w-8;
+}
+
+.Trigger {
+  all: unset;
+  flex: 1;
+  border-bottom: 2px solid transparent;
+  @apply flex items-center justify-center px-5 py-2 text-xl text-grey-500 duration-300 cursor-pointer hover:bg-blue-100;
+}
+
+.Trigger[data-state="active"] {
+  @apply text-white bg-blue-500 border-transparent;
+}
+
+.Trigger[data-state="inactive"] {
+  @apply text-grey-400 bg-transparent opacity-90 hover:bg-blue-100 hover:text-blue-400;
+}
+
+.Content {
+  flex: 1;
+  @apply p-5 outline-none rounded-b-md focus:shadow-xl;
+}

@@ -1,6 +1,7 @@
 import clsx from "clsx"
-import { CaretRight, TiktokLogo } from "phosphor-react"
+import { Alien, CaretRight, TiktokLogo } from "phosphor-react"
 import { useState } from "react"
+import { useAuth } from "../../contexts/AuthContext"
 import { EPositionItemMenu } from "../../interfaces/ui/navigation"
 import { getMenuByPosition } from "../../util/helpers/ui"
 import { LogoElement, SidebarElement, TextElement } from "../atoms"
@@ -11,12 +12,13 @@ export const SideMenu = () => {
   const [open, setOpen] = useState(false)
   const middleNav = getMenuByPosition(EPositionItemMenu.MIDDLE)
   const bottomNav = getMenuByPosition(EPositionItemMenu.BOTTOM)
+  const {handleSignOut} = useAuth()
   return (
     <SidebarElement.Root open={open}>
       <SidebarElement.Nav open={open}>
             <CaretRight 
               className={clsx(
-                'absolute cursor-pointer -right-3 top-9  bg-blue-500 text-white border-2 rounded-full',
+                'absolute cursor-pointer -right-3 top-7  bg-blue-500 text-white border-2 rounded-full',
                 {
                   'rotate-180': open
                 }
@@ -35,7 +37,7 @@ export const SideMenu = () => {
                         'rotate-[360deg]': open
                       }
                     )}>
-                      <TiktokLogo />
+                      <Alien onClick={handleSignOut} />
                     </LogoElement>
                   } 
                   label={<TextElement><h1 className={clsx(
@@ -56,7 +58,7 @@ export const SideMenu = () => {
               </TextInput.Root> */}
                 {middleNav.map(
                     item => (
-                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<TextElement>{item.label}</TextElement>} />
+                      <SidebarElement.NavSectionItemRoute open={open} itemMenu={item} />
                     )
                   )
                 }
@@ -66,7 +68,7 @@ export const SideMenu = () => {
             <SidebarElement.NavSection open={open}>
                   {bottomNav.map(
                     item => (
-                      <SidebarElement.NavSectionItem open={open} icon={item.icon} label={<TextElement>{item.label}</TextElement>} />
+                      <SidebarElement.NavSectionItemRoute open={open} itemMenu={item} />
                     )
                   )
                 }

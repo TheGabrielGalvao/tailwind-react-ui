@@ -1,5 +1,7 @@
-import { AddressBook, CurrencyDollarSimple, Gear, HouseSimple } from 'phosphor-react';
-import { EPositionItemMenu, Page, SimpleNavigationProps } from '../../interfaces/ui/navigation';
+import { AddressBook, CurrencyDollarSimple, Gear, HouseSimple, SignIn } from 'phosphor-react';
+import { GenericPage } from '../../components/pages/GenericPage';
+import { SignInPage } from '../../components/pages/Onboarding/SignInPage';
+import { EPositionItemMenu, ERouteContext, ERouteStatus, Page, SimpleNavigationProps } from '../../interfaces/ui/navigation';
 
 export const simpleNavigation: Page[] = [
     {
@@ -8,7 +10,12 @@ export const simpleNavigation: Page[] = [
       label: 'Home',
       icon: <HouseSimple />,
       order:1,
-      position: EPositionItemMenu.MIDDLE
+      position: EPositionItemMenu.MIDDLE,
+      route: '/',
+      element: <GenericPage text='Home' />,
+      status: ERouteStatus.MAKING,
+      routeContext: ERouteContext.COMMON,
+      private: true
     },
     {
       id: 2,
@@ -16,7 +23,11 @@ export const simpleNavigation: Page[] = [
       label: 'Contatos',
       icon: <AddressBook />,
       order:2,
-      position: EPositionItemMenu.MIDDLE
+      position: EPositionItemMenu.MIDDLE,
+      route: '/contacts',
+      element: <GenericPage text='Contatos' />,
+      routeContext: ERouteContext.COMMON,
+      private: true
     },
     {
       id: 3,
@@ -24,15 +35,31 @@ export const simpleNavigation: Page[] = [
       label: 'Financeiro',
       icon: <CurrencyDollarSimple />,
       order:3,
-      position: EPositionItemMenu.MIDDLE
+      position: EPositionItemMenu.MIDDLE,
+      route: '/financial',
+      element: <GenericPage text='Financeiro' />,
+      routeContext: ERouteContext.COMMON,
+      private: true
     },
     {
       id: 4,
+      name: 'login',
+      label: 'Login',
+      route: '/signin',
+      position: EPositionItemMenu.MIDDLE,
+      icon: <SignIn />,
+      element: <SignInPage />,
+      routeContext: ERouteContext.ONBOARDING,
+      private: false
+    },
+    {
+      id: 5,
       name: 'settings',
       label: 'Ajustes',
       icon: <Gear />,
       order:3,
-      position: EPositionItemMenu.BOTTOM
+      position: EPositionItemMenu.BOTTOM,
+      route: '/settings'
     }
 ]
   

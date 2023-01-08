@@ -1,6 +1,6 @@
 
 import {Slot} from '@radix-ui/react-slot'
-import { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from 'react'
+import { ButtonHTMLAttributes, ChangeEventHandler, InputHTMLAttributes, ReactNode } from 'react'
 
 
 export interface TextInputRootElementProps {
@@ -13,12 +13,16 @@ const TextInputRoot = ({children}: TextInputRootElementProps) => (
     </div>
 )
 
-export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface TextInputInputProps extends InputHTMLAttributes<HTMLInputElement> {
+    handleChange?: ChangeEventHandler<HTMLInputElement>
+    register?: any
+}
 
 const TextInputInput = ({...props}: TextInputInputProps) => {
+
     return (
         <input className="bg-transparent flex-1 outline-none text-gray-100 text-xs placeholder:text-gray-500"
-            {...props} 
+            {...props} {...props.register} 
         />
 )}
 
@@ -35,13 +39,29 @@ const TextInputIcon = ({children, onClick}: TextInputIconProps) => {
     )
 }
 
+export interface TextInputMessageProps {
+    message?: string
+    variant?: 'default' 
+}
+
+const TextInputMessage = ({children, onClick}: TextInputMessageProps) => {
+    
+    return (
+        <Slot className='w-6 h-6 text-gray-500' onClick={onClick}>
+            {children}
+        </Slot>
+    )
+}
+
 TextInputIcon.displayName = 'TextInput.Icon'
 TextInputInput.displayName = 'TextInput.Input'
 TextInputRoot.displayName = 'TextInput.Root'
+TextInputMessage.displayName = 'TextInput.Message'
 
 
 export const TextInputElement = {
     Root: TextInputRoot,
     Input: TextInputInput,
-    Icon: TextInputIcon
+    Icon: TextInputIcon,
+    Message: TextInputMessage
 }

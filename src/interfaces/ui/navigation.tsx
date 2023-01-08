@@ -8,11 +8,12 @@ export interface Page {
     element?: ReactNode
     icon?: React.ComponentType<IconProps> | ReactNode
     position?: EPositionItemMenu
-    route?: string
+    route: string
     order?: number
     exact?: boolean
     private?: boolean
-    routeContext?: string
+    routeContext?: ERouteContext
+    status?: ERouteStatus
 }
 
 export interface Module {
@@ -20,7 +21,7 @@ export interface Module {
     name: string
     label?: string
     icon?: React.ComponentType<IconProps>
-    route: string
+    route?: string
     element?: ReactNode
     pages?: Page[]
     exact?: boolean
@@ -35,6 +36,18 @@ export enum EPositionItemMenu {
   TOP = "top",
   MIDDLE = "middle",
   BOTTOM = "bottom",
+}
+
+export enum ERouteStatus {
+  ERROR = 0,
+  MAKING = 1,
+  OK = 2,
+  MAN = 4,
+}
+
+export enum ERouteContext {
+  COMMON = 0,
+  ONBOARDING = 1
 }
 
 export interface SimpleNavigationProps {

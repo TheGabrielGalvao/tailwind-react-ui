@@ -7,7 +7,7 @@ export interface LoginPageProps extends BaseComponentProps {
   secondaryText?: string
  }
 
-export const OnBoarding = ({children, headerText, secondaryText}: LoginPageProps) => {
+export const OnBoardingLayout = ({children, headerText, secondaryText}: LoginPageProps) => {
   return (
     <div className="w-screen p-6 h-screen flex items-center justify-center text-gray-100 flex-col" style={{backgroundImage: `url(${bgBlue})`, backgroundSize: 'cover'}}>
       <header className='flex flex-col items-center'>
